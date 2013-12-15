@@ -39,7 +39,8 @@ endfunction
 function! catapult#submit(id, password, prb)
   let lang = s:getlang()
   let source = s:getsource()
-  call system( "wget  --post-data=\"" . "userID=" . a:id . "&password=" . a:password . "&problemNO=" . a:prb . "&language=" . lang . "&sourceCode=" . source . "\" http://judge.u-aizu.ac.jp/onlinejudge/servlet/Submit -O -")
+  let command = iconv("wget  --post-data=\"" . "userID=" . a:id . "&password=" . a:password . "&problemNO=" . a:prb . "&language=" . lang . "&sourceCode=" . source . "\" http://judge.u-aizu.ac.jp/onlinejudge/servlet/Submit -O -", &encoding, "shift-jis")
+  call system(command)
   call system("xdg-open http://judge.u-aizu.ac.jp/onlinejudge/status.jsp")
 endfunction
 
