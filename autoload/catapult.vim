@@ -29,7 +29,7 @@ function! s:getsource()
   let s = ""
   let lines = getline(0, line("$"))
   for i in lines
-    let s = s . i
+    let s = s . "\n" . i
   endfor
   let s = substitute(s, '\\', '\\\\', "g")
   let s = substitute(s, '\"', '\\\"', "g")
