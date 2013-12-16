@@ -8,7 +8,7 @@
 :ThrowToAizu 10000
 ```
 
-##Sennigs
+##Settigs
 
 * pulgin/catapult.vim
 
