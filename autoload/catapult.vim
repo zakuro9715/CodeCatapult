@@ -33,6 +33,7 @@ function! s:getsource()
   endfor
   let s = substitute(s, '\\', '\\\\', "g")
   let s = substitute(s, '\"', '\\\"', "g")
+  let s = substitute(s, '\$', '\\$', "g")
   let s = substitute(s, "%", "%25", "g")
   let s = substitute(s, "&", "%26", "g")
   let s = substitute(s, "+", "%2b", "g")
